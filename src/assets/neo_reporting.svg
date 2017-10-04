@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="3482.914 154.178 14.472 19.215">
+  <defs>
+    <style>
+      .cls-1, .cls-3 {
+        fill: #e5e5e5;
+      }
+
+      .cls-2 {
+        fill: none;
+      }
+
+      .cls-3 {
+        stroke: #e5e5e5;
+      }
+    </style>
+  </defs>
+  <g id="Group_53" data-name="Group 53" transform="translate(3483.411 155.699)">
+    <path id="Path_34" data-name="Path 34" class="cls-1" d="M24.019,29.94S13.978,32.663,11,34.705c0,0,7.318-4.765,1.447-9.105C12.447,25.6,23.594,26.876,24.019,29.94Z" transform="translate(-10.044 -23.638)"/>
+    <path id="Path_35" data-name="Path 35" class="cls-2" d="M73,36.6" transform="translate(-66.769 -33.702)"/>
+    <path id="Path_36" data-name="Path 36" class="cls-3" d="M29.5,1.864S31.542-.179,32.734-.008a2.765,2.765,0,0,0,1.7,2.383,2.469,2.469,0,0,1-2.042-1.7S31.542.5,29.5,1.864Z" transform="translate(-26.97 -1)"/>
+    <path id="Path_37" data-name="Path 37" class="cls-3" d="M8.7,98.6s.6,5.191-1.361,7.4c0,0-9.786-.681-6.722-4.255,0,0-2.893,3.063,6.3,3.4C6.912,105.152,8.614,104.216,8.7,98.6Z" transform="translate(0 -88.825)"/>
+  </g>
+</svg>

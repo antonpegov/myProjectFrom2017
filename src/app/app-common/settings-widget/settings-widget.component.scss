@@ -1,0 +1,10 @@
+.icon {
+    background: url("../../../Assets/settings.svg")
+}
+:root {
+    &.top {
+        .text {
+            display: none;
+        }
+    }
+} 

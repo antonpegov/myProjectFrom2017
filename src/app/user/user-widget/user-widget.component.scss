@@ -1,0 +1,24 @@
+@import '../../app.common.scss';
+.user-widget{
+    margin-top: 5px;
+    .name{
+        color: $app-dark;
+        font-size: 16px;
+    }
+    .photo{        
+        img {
+            margin-left: 10px;
+            width: 45px;
+            margin-left: 10px;
+            border: 2px solid $app-light;
+            background-color: $app-light;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: all ease-in-out .5s;
+            &:hover{
+                border: 2px solid $app-light/1.2;
+            }
+        }
+        
+    }
+}

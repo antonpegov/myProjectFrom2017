@@ -1,0 +1,31 @@
+@import '../../app.theme';
+
+:host {
+    border-top: 1px solid $app-superlight;
+    left: 0;
+    position: absolute;
+    top: 69px;
+    width: 100%;
+}
+
+a {
+    margin: 0;
+    color: $app-grey !important;
+    transition: all ease-in-out .3s;
+    border-bottom: 4px solid transparent;
+    &.selected, &.selected:hover, &:hover, &:active, &:focus {
+        background-color: initial !important;
+        border-bottom: 4px solid $app-accent;
+        color: $app-dark !important;
+    }
+    &:hover {
+        border-bottom: 4px solid transparent;;
+    }
+    
+}
+
+md-nav-list {
+    display: flex;
+    margin-left: 20px;
+    padding: 0;
+}

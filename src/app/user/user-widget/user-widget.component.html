@@ -1,0 +1,8 @@
+<div class="user-widget" *ngIf="appUser">
+  <span class="name">
+    {{appUser.lname | capitalize}} {{appUser.fname | initial}} {{appUser.mname | initial}} 
+  </span>
+  <span class="photo" (click)="openUser()" title="Открыть">
+    <img [src]="appUser.photo" alt="фото">
+  </span>
+</div>

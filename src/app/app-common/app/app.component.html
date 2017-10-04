@@ -1,0 +1,35 @@
+<div fxLayout="column" fxFlex>
+  <md-sidenav-container fxFlex>
+    <md-sidenav #mainSideNav mode="side" opened  class="app-bg primary">
+      <md-toolbar class="app-top-toolbar app-name" color="accent">
+        <img src="Scripts/NgApp/assets/neo_logo.svg" style="height:50%">
+        <span>{{appName}}</span>
+      </md-toolbar>
+      <md-nav-list disableRipple>
+        <a *ngFor="let navItem of mainMenuItems"
+           md-list-item
+           md-ripple
+           [style.position]="'relative'"
+           routerLinkActive="selected"
+           [routerLink]="[navItem.path]">
+          <i *ngIf="navItem.icon" [className]="navItem.icon+' menu_icon '"></i>
+          <span class="menu-item">{{navItem.title}}</span>
+        </a>
+      </md-nav-list>
+    </md-sidenav>
+    <md-toolbar class="app-top-toolbar">
+      <button md-icon-button (click)="mainSideNav.toggle()" disableRipple>
+        <md-icon aria-hidden="true" *ngIf="mainSideNav.opened">reply</md-icon>
+        <md-icon aria-hidden="true" *ngIf="!mainSideNav.opened">menu</md-icon>
+      </button>
+      <!--<md-icon *ngIf="navItem.icon">{{navItem.icon}}</md-icon>-->
+      <span style="visibility:hidden">{{(activeMenuItem$ | async)?.title}}</span>
+      <span fxFlex></span>
+      <app-user-widget></app-user-widget>
+      <!--<button md-icon-button [mdMenuTriggerFor]="themeMenu">
+        <md-icon>more_vert</md-icon>
+      </button>-->
+    </md-toolbar><!-- Верхний тулбар -->
+    <router-outlet></router-outlet>
+  </md-sidenav-container>
+</div>

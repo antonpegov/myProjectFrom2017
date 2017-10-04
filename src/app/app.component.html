@@ -1,0 +1,44 @@
+<div fxLayout="column" fxFlex>
+  <md-sidenav-container fxFlex>
+    <md-sidenav #mainSideNav mode="side" opened  class="app-bg primary">
+      <md-toolbar class="app-top-toolbar app-name" color="accent">
+        <img src="Scripts/NgApp/assets/neo_logo.svg" style="height:50%">
+        <span>{{appName}}</span>
+      </md-toolbar>
+      <md-nav-list disableRipple>
+        <a *ngFor="let navItem of mainMenuItems"
+           md-list-item
+           md-ripple
+           [style.position]="'relative'"
+           routerLinkActive="selected"
+           [routerLink]="[navItem.path]">
+          <i *ngIf="navItem.icon" [className]="navItem.icon+' menu_icon '"></i>
+          <span class="menu-item">{{navItem.title}}</span>
+        </a>
+      </md-nav-list>
+    </md-sidenav>
+    <main [@routerTransition]="getState(o)">
+      <!-- НЕ ПОЛУЧИЛОСЬ ЗАПУСТИТЬ АНИМАЦИЮ  -->
+      <router-outlet #o="outlet"></router-outlet>
+    </main>
+  </md-sidenav-container>
+  <md-toolbar class="app-top-toolbar widget-toolbar" [style.height.px]="toolbarHeight">
+    <!-- <button md-icon-button (click)="mainSideNav.toggle()" disableRipple>
+      <md-icon aria-hidden="true" *ngIf="mainSideNav.opened">reply</md-icon>
+      <md-icon aria-hidden="true" *ngIf="!mainSideNav.opened">menu</md-icon>
+    </button> --> <!--Кнопка открытия/закрытия отключена, т.к. пришлось зафиксировать верхний тулбар -->
+    <!--<md-icon *ngIf="navItem.icon">{{navItem.icon}}</md-icon>-->
+    <span style="display:none">{{(activeMenuItem$ | async)?.title}}</span>
+    <span class="header">{{(toolbarText$ | async)}}</span>
+    <span fxFlex></span>
+    <app-user-widget></app-user-widget>
+    <!--<button md-icon-button [mdMenuTriggerFor]="themeMenu">
+      <md-icon>more_vert</md-icon>
+    </button>-->
+    <app-subnavigation (showMe)="showSubMenu($event)"></app-subnavigation>
+    <app-settings-widget (showMe)="showSettingsWidget($event)" 
+    [ngClass]="getSettingsPosition()" 
+    *ngIf="settingsVisible">
+    </app-settings-widget>
+  </md-toolbar><!-- Верхний тулбар -->
+</div>

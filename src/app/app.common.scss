@@ -1,0 +1,43 @@
+@import '../styles';
+// .mat-drawer-content {
+//   overflow: hidden !important;
+// }
+.module-container {
+  padding: 5px 50px;
+  .module-header {
+    font-size: 38px;
+    color: $app-dark;
+  }
+  .module-title, .module-text {
+    font-size: 16px;
+    color: $app-grey;
+  }
+  .module-img-with-btn {
+    display:flex;
+    flex-flow: row wrap;
+    justify-content: flex-start;
+    align-items: center;
+    margin-bottom: 1em;
+    .module-img {
+      margin: 20px;
+    }
+    .module-btn {
+      .md-icon-button{
+        margin: 50px 100px;
+        padding: 12px 30px;
+        color: white;
+        font-size: 16px;
+        i {
+          width: 13px;
+          height: 25px;
+          background-color: white;
+          -webkit-mask-position: top;
+          mask-position: top;
+          position: relative;
+          display: inline-flex;
+          left: -10px;
+        }
+      }
+    }
+  }
+}

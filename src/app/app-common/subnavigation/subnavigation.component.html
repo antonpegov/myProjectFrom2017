@@ -1,0 +1,11 @@
+<md-nav-list disableRipple *ngIf="subMenuItems.length>0" xPosition="above">
+  <a *ngFor="let navItem of subMenuItems"
+      md-list-item
+      md-ripple
+      routerLinkActive="selected"
+      [routerLink] = "[navItem.path, navItem.routeName]">
+      {{navItem.title}}
+  </a>
+  <!-- <a md-list-item [routerLink]="['selector', {outlets: {'selector':['added']}}]" routerLinkActive="selected">Добавленные</a>
+  <a md-list-item [routerLink]="['selector', {outlets: {'selector':['loaded']}}]" routerLinkActive="selected">Загруженные</a> -->
+</md-nav-list>
