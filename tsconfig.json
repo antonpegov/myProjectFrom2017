@@ -1,6 +1,7 @@
 {
   "compileOnSave": false,
   "compilerOptions": {
+    "watch": true,
     "outDir": "./dist/out-tsc",
     "sourceMap": true,
     "declaration": false,
@@ -11,6 +12,7 @@
     "typeRoots": [
       "node_modules/@types"
     ],
+    "include": [ "**/*" ],
     "lib": [
       "es2017",
       "dom"

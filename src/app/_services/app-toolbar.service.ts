@@ -1,15 +1,16 @@
-import { Injectable } from '@angular/core';
-import { Observable, BehaviorSubject } from "rxjs";
-import { Title } from "@angular/platform-browser";
 import { Router, NavigationEnd, ActivatedRoute } from "@angular/router";
+import { Observable, BehaviorSubject } from "rxjs";
+import { Injectable } from '@angular/core';
+import { Title } from "@angular/platform-browser";
 import 'rxjs/add/operator/filter';
 import 'rxjs/add/operator/map';
-import * as $ from 'jquery';
+//import * as $ from 'jquery';
 
 export class MenuItem {
     path: string;
     title: string;
     icon?: string;
+    menu?: boolean;
 }  
 
 export class SubMenuItem extends MenuItem {

@@ -1,0 +1,12 @@
+@import '../../app.theme';
+
+md-toolbar {
+    background-color: $app-white !important;
+    padding: 5px 20px;
+    ::ng-deep mat-toolbar-row {
+        justify-content: space-between;
+    }
+}
+button {
+    background-color: $app-primary;
+}

@@ -35,10 +35,10 @@
     <!--<button md-icon-button [mdMenuTriggerFor]="themeMenu">
       <md-icon>more_vert</md-icon>
     </button>-->
-    <app-subnavigation (showMe)="showSubMenu($event)"></app-subnavigation>
-    <app-settings-widget (showMe)="showSettingsWidget($event)" 
-    [ngClass]="getSettingsPosition()" 
-    *ngIf="settingsVisible">
+    <app-subnavigation (showMenu)="showSubMenu($event)"></app-subnavigation>
+    <app-settings-widget 
+      (showSettings)="showSettingsWidget($event)" 
+      [ngClass]="[settingsPosition$ | async, settingsVisible$ | async]">
     </app-settings-widget>
   </md-toolbar><!-- Верхний тулбар -->
 </div>

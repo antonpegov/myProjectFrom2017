@@ -1,2 +1,2 @@
-export * from './capitalize.pipe';
-export * from './initial.pipe';
+export { CapitalizePipe } from './capitalize.pipe';
+export { InitialPipe } from './initial.pipe';

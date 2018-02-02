@@ -1,2 +1,2 @@
-export * from './fadein';
-export * from './slidetoleft';
+export { fadeInAnimation } from './fadein';
+export { routerTransition } from './slidetoleft';

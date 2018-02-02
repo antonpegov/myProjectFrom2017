@@ -16,12 +16,12 @@ export class SubnavigationComponent implements OnInit {
   ) { }
 
   @Output()
-  showMe: EventEmitter<boolean> = new EventEmitter();
+  showMenu: EventEmitter<boolean> = new EventEmitter();
 
   ngOnInit() {
     this.$toolbar.subMenu$.subscribe((menu : SubMenuItem[]) => {
       let show = menu.length === 0 ? false : true;
-      this.showMe.emit(show) // Просигналить родительскому компоненту, что делать с субменюшкой
+      this.showMenu.emit(show) // Просигналить родительскому компоненту, что делать с субменюшкой
       if (show){
           // Обновить содержимое меню c задержкой, чтобы оно успело выехать
           setTimeout(_=> {

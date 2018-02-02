@@ -1,3 +1,80 @@
-<p>
-  selector-added works!
-</p>
+<!-- ReSharper disable Html.TagNotResolved -->
+<md-toolbar class="buttons" >
+  <div class="left">
+    <button md-raised-button disableRipple
+          color="primary" #add
+          (click)="btnClick($event)"
+          *ngIf="role==Role.user"
+          ngClass="md-icon-button">
+      <i class="neo_power" style="width:25px"></i>
+      Добавить
+    </button>
+    <button md-raised-button disableRipple
+          color="primary" #upload
+          (click)="btnClick($event)"
+          *ngIf="role>Role.user"
+          ngClass="md-icon-button">
+      <i class="neo_power" style="width:25px"></i>
+      Загрузить в селектор
+    </button>
+  </div>
+  <div class="right">
+    <button md-raised-button disableRipple #del (click)="_click.next('del')" color="primary">
+      Удалить
+    </button>
+    <button md-raised-button disableRipple #change (click)="_click.next('change')" color="primary">
+      Заменить
+    </button>
+    <button md-raised-button disableRipple #show (click)="_click.next('show')" color="primary">
+      Просмотреть
+    </button>
+  </div>
+</md-toolbar>
+<kendo-grid class="grid" [data]="grid.view$ | async" [height]="410" [skip]="grid._state.skip"
+      [pageable]="true" [sortable]="true" [pageSize]="grid._state.take" [sort]="grid.sort" 
+      [groupable]="true" [group]="grid._state.group" (dataStateChange)="grid.stateChange($event)">
+      <!--(pageChange)="grid.pageChange($event)" -->
+
+  <kendo-grid-column title="№" width="60">
+    <ng-template kendoGridCellTemplate let-rowIndex="rowIndex">
+      {{rowIndex+1}}
+    </ng-template>
+  </kendo-grid-column><!-- Порядковый номер -->
+  <kendo-grid-column field="ReportName" title="Наименование инфоблока" width="250">
+
+  </kendo-grid-column><!-- Название -->
+  <kendo-grid-column field="DateCreated" title="Дата заполнения" width="80">
+    <ng-template kendoGridCellTemplate let-dataItem>
+      {{ dataItem.DateCreated | date: 'dd.MM.yyyy' }}
+    </ng-template>
+  </kendo-grid-column><!-- Дата заполнения -->
+  <kendo-grid-column field="Author" title="Автор" width="80">
+    <ng-template kendoGridCellTemplate let-dataItem>
+      <!-- {{dataItem.Author}} -->
+      <!-- {{dataItem.Author.LastName}} {{dataItem.Author.FirstName | shorten: 1: '.'}} {{dataItem.Author.MiddleName | shorten: 1: '.'}} -->
+    </ng-template>
+    </kendo-grid-column><!-- Назначенный исполнитель -->
+    <kendo-grid-column field="Comments" title="Комментарии" width="80">
+      <ng-template kendoGridCellTemplate let-dataItem>
+        <input type="checkbox" [checked]="dataItem.Comments.length>0 " disabled/>
+      </ng-template>
+    </kendo-grid-column><!-- Комментарии -->
+    <!-- <kendo-grid-column field="SelectorId"  title="Селектор" width="80">
+      <ng-template kendoGridCellTemplate let-dataItem>
+          {{dataItem.SelectorId | shorten: 9: '...'}}
+      </ng-template>
+    </kendo-grid-column> -->
+  <!-- <kendo-grid-column field="Discontinued" title="Discontinued" width="120">
+    <ng-template kendoGridCellTemplate let-dataItem>
+      <input type="checkbox" [checked]="dataItem.Discontinued" disabled/>
+    </ng-template>
+  </kendo-grid-column> --><!-- Пример использования ng-template -->
+</kendo-grid>
+
+<!-- ========== CellTemplateDirective =============
+  columnIndex — The current column index.
+  rowIndex    — The current row index.
+  dataItem    — The current data item.
+column      — The current column instance. 
+-->
+

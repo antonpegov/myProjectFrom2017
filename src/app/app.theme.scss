@@ -2,8 +2,8 @@
 
 
 @include mat-core();
-$app-color-primary: mat-palette($mat-grey, 800);
-/*$app-color-primary: #4a5559;*/
+$app-color-primary: mat-palette($mat-grey, 700);
+//$app-color-primary: color("#4a5559");
 $app-color-accent: mat-palette($mat-amber, 600);
 /*$app-color-accent: #ffb900;*/
 $color-app-warn: mat-palette($mat-red);

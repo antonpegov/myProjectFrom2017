@@ -8,6 +8,8 @@ import { AppToolbarService } from './app-toolbar.service';
 import { NavigationService } from './navigation.service';
 import { Util } from '../_helpers/';
 
+export { User, Role };
+
 @Injectable()
 export class UserService {
   

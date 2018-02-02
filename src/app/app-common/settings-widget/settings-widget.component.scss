@@ -1,10 +1,33 @@
+@import '../../app.theme';
+
 .icon {
-    background: url("../../../Assets/settings.svg")
+    width: 20px;
+    height: 20px;
+    // display: inline-block;
+    margin-left: 15px;
 }
-:root {
+.text {
+    color: $app-grey;
+    font-size: 16px;
+    padding: 5px;
+}
+:host {
     &.top {
+        .icon {
+            width: 25px;
+            height: 25px;
+        }
         .text {
             display: none;
         }
+    }
+    &.bottom {
+        position: absolute;
+        right: 10px;
+        bottom: 10px;
+    }
+    > div {
+        cursor: pointer;
+        outline: none;
     }
 } 

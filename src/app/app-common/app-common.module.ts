@@ -1,6 +1,11 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FlexLayoutModule } from '@angular/flex-layout';
+// Kendo UI
+import { IntlModule } from '@progress/kendo-angular-intl';
+// Pipes library
+import { NgPipesModule } from 'ngx-pipes';
+// Google Material
 import {
     MdToolbarModule,
     MdListModule,
@@ -16,6 +21,8 @@ import { AlertComponent } from './alert/alert.component';
 @NgModule({
     imports: [
         CommonModule,
+        IntlModule,             // Модуль интернационализации
+        NgPipesModule,          // Набор полезных фильтров        
         FlexLayoutModule,
         MdToolbarModule,
         MdListModule,
@@ -29,6 +36,8 @@ import { AlertComponent } from './alert/alert.component';
     declarations: [AlertComponent],
     exports: [
         FlexLayoutModule,
+        IntlModule,
+        NgPipesModule,
         MdToolbarModule,
         MdListModule,
         MdIconModule,
