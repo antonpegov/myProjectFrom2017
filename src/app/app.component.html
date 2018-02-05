@@ -2,7 +2,7 @@
   <md-sidenav-container fxFlex>
     <md-sidenav #mainSideNav mode="side" opened  class="app-bg primary">
       <md-toolbar class="app-top-toolbar app-name" color="accent">
-        <img src="Scripts/NgApp/assets/neo_logo.svg" style="height:50%">
+        <img src="./assets/neo_logo.svg" style="height:50%">
         <span>{{appName}}</span>
       </md-toolbar>
       <md-nav-list disableRipple>
@@ -36,8 +36,8 @@
       <md-icon>more_vert</md-icon>
     </button>-->
     <app-subnavigation (showMenu)="showSubMenu($event)"></app-subnavigation>
-    <app-settings-widget 
-      (showSettings)="showSettingsWidget($event)" 
+    <app-settings-widget
+      (showSettings)="showSettingsWidget($event)"
       [ngClass]="[settingsPosition$ | async, settingsVisible$ | async]">
     </app-settings-widget>
   </md-toolbar><!-- Верхний тулбар -->

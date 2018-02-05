@@ -31,7 +31,7 @@
   </div>
 </md-toolbar>
 <kendo-grid class="grid" [data]="grid.view$ | async" [height]="410" [skip]="grid._state.skip"
-      [pageable]="true" [sortable]="true" [pageSize]="grid._state.take" [sort]="grid.sort" 
+      [pageable]="true" [sortable]="true" [pageSize]="grid._state.take"
       [groupable]="true" [group]="grid._state.group" (dataStateChange)="grid.stateChange($event)">
       <!--(pageChange)="grid.pageChange($event)" -->
 
@@ -75,6 +75,6 @@
   columnIndex — The current column index.
   rowIndex    — The current row index.
   dataItem    — The current data item.
-column      — The current column instance. 
+column      — The current column instance.
 -->
 

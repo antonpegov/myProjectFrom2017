@@ -1,5 +1,5 @@
 export class Util {
-    
+
     static readonly _ROOT: string = 'Scripts/NgApp/';
 
     /**

@@ -21,13 +21,14 @@ import { UserModule } from './user/user.module';
 import { UserRoutingModule } from './user/user-routing.module';
 import {ReversePipe} from 'ngx-pipes/src/app/pipes/array/reverse';
 // Сервисы:
-import { AppToolbarService, UserService, NavigationService, HardcodeService } from "./_services/";
+import { AppToolbarService, UserService, NavigationService, HardcodeService } from './_services/';
 // Компоненты:
 import { AppComponent } from './app.component';
 import { SubnavigationComponent } from './app-common/subnavigation/subnavigation.component';
 import { UserWidgetComponent } from './user/user-widget/user-widget.component';
 import { InitialPipe, CapitalizePipe } from './_pipes/';
 import { SettingsWidgetComponent } from './app-common/settings-widget/settings-widget.component';
+import { NgInitDirective } from './selector/selector-added/selector-added.component';
 // import { RouterModule } from '@angular/router';
 
 @NgModule({
@@ -38,7 +39,8 @@ import { SettingsWidgetComponent } from './app-common/settings-widget/settings-w
     // ReversePipe,
     UserWidgetComponent,
     SubnavigationComponent,
-    SettingsWidgetComponent
+    SettingsWidgetComponent,
+    NgInitDirective
   ],
   imports: [
       HttpModule,
